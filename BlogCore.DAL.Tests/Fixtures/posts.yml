@@ -1,0 +1,19 @@
+﻿Posts:
+  test-post:
+    Id: 1
+    Author: papaj
+    Content: test, test, test...
+  post2:
+    Id: 2
+    Author: me
+    Content: some content
+Comments:
+  c1:
+    Content: XDDDD
+    PostId: 1
+  c2:
+    Content: 2137
+    PostId: 1
+  c3:
+    Content: ???
+    PostId: 2

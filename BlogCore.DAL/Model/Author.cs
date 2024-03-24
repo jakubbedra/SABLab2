@@ -6,4 +6,5 @@ public class Author
     public string Name { get; set; }
     public  string Ip { get; set; }
     public bool Gender { get; set; }
+    public string Descritpion { get; set; }
 }

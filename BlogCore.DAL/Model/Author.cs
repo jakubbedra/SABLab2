@@ -4,4 +4,5 @@ public class Author
 {
     public string Name { get; set; }
     public string Description { get; set; }
+    public CreditCard CreditCard { get; set; }
 }

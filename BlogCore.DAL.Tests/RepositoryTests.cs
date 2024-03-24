@@ -9,13 +9,15 @@ namespace Blog.DAL.Tests;
 [TestFixture]
 public class RepositoryTests : DbBaseTest<BlogFixtures>
 {
+    private static string Connection = "Server=localhost\\SQLEXPRESS";
+    
     [Test, Order(1)]
     public void GetAllPost_TwoPostInDb_ReturnTwoPost()
     {
         // arrange
         // String connectionString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("BloggingDatabase");
 
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         // //String connectionString = GetConnectionString("BloggingDatabase");
         // var context = new BlogContext(connectionString);
         // context.Database.EnsureCreated();
@@ -32,7 +34,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void AddPost_AuthorAndContentMissing_ExceptionThrown()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
         Post post = new Post();
         
@@ -47,7 +49,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void AddPost_AuthorMissing_ExceptionThrown()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
         Post post = new Post() { Content = "sample text" };
         
@@ -62,7 +64,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void AddPost_ContentMissing_ExceptionThrown()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
         Post post = new Post() { Author = "Tomasz G." };
         
@@ -77,7 +79,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void AddPost_ValidPost_NoException()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
         Post post = new Post() { Author = "Tomasz G.", Content = "sample text"};
         
@@ -92,7 +94,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void GetAllPost_ThreePostInDb_ReturnThreePost()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
 
         // act
@@ -106,7 +108,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void GetAllComments_ThreeCommentsInDb_ReturnThreeComments()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
 
         // act
@@ -120,7 +122,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void GetAllCommentsByPost_ThreeCommentsInDb_ReturnTwoComments()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
         
         // act
@@ -135,7 +137,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void AddComment_SampleComment()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
         Comment comment = new Comment()
         {
@@ -155,7 +157,7 @@ public class RepositoryTests : DbBaseTest<BlogFixtures>
     public void GetAllCommentsByPost_FourCommentsInDb_ReturnThreeComments()
     {
         // arrange
-        String connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        String connectionString = $"{Connection};Database=master;Trusted_Connection=True;encrypt=false;";
         var repository = new BlogRepository(connectionString);
         
         // act

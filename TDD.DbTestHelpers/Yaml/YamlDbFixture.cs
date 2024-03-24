@@ -8,7 +8,7 @@ namespace TDD.DbTestHelpers.Yaml
     public class YamlDbFixture<TContext, TFixtureType> : DbFixture<TContext> where TContext : DbContext, new()
     {
         private readonly FileHelper _fileHelper;
-        private string _yamlFolderName = "C:\\Users\\jakub\\Desktop\\BlogCore\\BlogCore.DAL.Tests\\Fixtures";
+        private string _yamlFolderName = "C:\\Users\\theKonfyrm\\RiderProjects\\SABLab2\\BlogCore.DAL.Tests\\Fixtures";
         private string[] _yamlFilesNames = new[] {"posts.yml"};
 
         public YamlDbFixture()

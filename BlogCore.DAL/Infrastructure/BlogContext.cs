@@ -16,7 +16,7 @@ public class BlogContext : DbContext
 
     public BlogContext() : base()
     {
-        _connectionString = "Server=localhost;Database=master;Trusted_Connection=True;encrypt=false;";
+        _connectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;encrypt=false;";
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

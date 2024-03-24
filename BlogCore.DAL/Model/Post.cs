@@ -18,5 +18,6 @@ namespace Blog.DAL.Model
         
         // related comments
         public List<Comment> Comments { get; set; }
+        public long PublicationDate { get; set; }
     }
 }
